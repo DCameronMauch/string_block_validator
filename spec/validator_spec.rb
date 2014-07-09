@@ -31,5 +31,9 @@ describe Validator do
     it 'identifies brackets overlapping paranthesis as invalid' do
       expect(subject.validate '[(])').to be false
     end
+
+    it 'identifies brackets overlapping paranthesis as invalid' do
+      expect(subject.validate 'a[b(c]d)e').to be false
+    end
   end
 end
